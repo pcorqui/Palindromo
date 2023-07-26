@@ -1,7 +1,7 @@
 public class Palindromo {
     //función para eliminar espacios y convertir a minúsculas
     public static String limpiarTexto(String texto) {
-        return texto.replaceAll("\\s", "").toLowerCase();
+        return texto.replaceAll("\\s", "");
     }
 
     //invertir texto
@@ -16,11 +16,11 @@ public class Palindromo {
     public static boolean esPalindromo(String frase) {
         String fraseLimpia = limpiarTexto(frase);
         String invertido = invertirCadena(fraseLimpia);
-        return fraseLimpia.equals(invertido);
+        return fraseLimpia.equalsIgnoreCase(invertido);
     }
 
     public static void main(String[] args) {
-        String texto = "Anita lava la tina";
+        String texto = "Anita lava la tIna";
         if (esPalindromo(texto)) {
             System.out.println(texto);
             System.out.println("es palindromo");
